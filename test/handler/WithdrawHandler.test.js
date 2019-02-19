@@ -2,7 +2,7 @@ const WithdrawHandler = artifacts.require("./handler/WithdrawHandler.sol");
 const ERC20Token = artifacts.require("./token/ERC20GatewayMintable.sol");
 const ERC721Token = artifacts.require("./token/ERC721GatewayMintable.sol");
 const ERC721BasicToken = artifacts.require("./token/ERC721BasicToken.sol");
-const EthereumCoin = artifacts.require("./token/EthereumCoin.sol");
+const EthereumToken = artifacts.require("./token/EthereumToken.sol");
 
 const { BN, ether, constants, shouldFail, expectEvent } = require("openzeppelin-test-helpers");
 const { ZERO_ADDRESS } = constants;
@@ -70,7 +70,7 @@ contract("WithdrawHandler", function ([admin, owner, oracle, user1, user2, user3
 
     erc20 = await ERC20Token.new(handler.address, "Mapped ERC20", "MAP20", 18, { from: admin });
     erc721 = await ERC721Token.new(handler.address, "Mapped ERC721", "MAP721", { from: admin });
-    ethToken = await EthereumCoin.new(handler.address, { from: admin });
+    ethToken = await EthereumToken.new(handler.address, { from: admin });
 
     await handler.addToken(foreignERC20, erc20.address, "0xcc4aa204", { from: owner });
     await handler.addToken(foreignERC721, erc721.address, "0x9013e617", { from: owner });

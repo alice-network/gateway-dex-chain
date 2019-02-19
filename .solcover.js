@@ -17,7 +17,7 @@ module.exports = {
     "token/IERC20GatewayMintable.sol",
     "token/IERC721GatewayMintable.sol",
     "token/ERC721BasicToken.sol",
-    "token/EthereumCoin.sol",
+    "token/EthereumToken.sol",
     // "mock/OracleManageableMock.sol",
     "mock/ERC20Mock.sol",
     "mock/ERC721Mock.sol",

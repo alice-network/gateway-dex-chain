@@ -1,7 +1,7 @@
 const Gateway = artifacts.require("./Gateway.sol");
 const ERC20Token = artifacts.require("./token/ERC20GatewayMintable.sol");
 const ERC721Token = artifacts.require("./token/ERC721GatewayMintable.sol");
-const EthereumCoin = artifacts.require("./token/EthereumCoin.sol");
+const EthereumToken = artifacts.require("./token/EthereumToken.sol");
 
 const { BN, ether, constants, expectEvent } = require("openzeppelin-test-helpers");
 const { ZERO_ADDRESS } = constants;
@@ -37,7 +37,7 @@ contract("Gateway", function([admin, owner, oracle, user1, user2]) {
 
     erc20 = await ERC20Token.new(gateway.address, "ERC20", "E20", 18, { from: admin });
     erc721 = await ERC721Token.new(gateway.address, "ERC721", "E721", { from: admin });
-    ethToken = await EthereumCoin.new(gateway.address, { from: admin });
+    ethToken = await EthereumToken.new(gateway.address, { from: admin });
 
     await gateway.setEthTokenAddress(ethToken.address, { from: owner });
 

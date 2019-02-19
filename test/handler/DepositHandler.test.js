@@ -1,7 +1,7 @@
 const DepositHandler = artifacts.require("./handler/DepositHandler.sol");
 const ERC20Token = artifacts.require("./token/ERC20GatewayMintable.sol");
 const ERC721Token = artifacts.require("./token/ERC721GatewayMintable.sol");
-const EthereumCoin = artifacts.require("./token/EthereumCoin.sol");
+const EthereumToken = artifacts.require("./token/EthereumToken.sol");
 
 const { BN, ether, shouldFail, expectEvent } = require("openzeppelin-test-helpers");
 
@@ -54,7 +54,7 @@ contract("DepositHandler", function([admin, owner, oracle, user1, user2]) {
 
     erc20 = await ERC20Token.new(handler.address, "ERC20", "E20", 18, { from: admin });
     erc721 = await ERC721Token.new(handler.address, "ERC721", "E721", { from: admin });
-    ethToken = await EthereumCoin.new(handler.address, { from: admin });
+    ethToken = await EthereumToken.new(handler.address, { from: admin });
   });
 
   context("with erc20", async function() {
