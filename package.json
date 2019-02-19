@@ -5,27 +5,30 @@
   "files": [
     "abis",
     "contracts",
-    "test"
+    "test",
+    "zos.json",
+    "zos.dev-2063825449021.json",
+    "zos.dev-15935000495001.json"
   ],
   "scripts": {
-    "compile": "./node_modules/.bin/truffle compile --all",
-    "build-abis": "./node_modules/.bin/truffle compile && node scripts/build-abis.js",
+    "build": "./node_modules/.bin/truffle compile --all && node scripts/build-abis.js",
     "test": "./node_modules/.bin/truffle test",
     "test:coverage": "./node_modules/.bin/solidity-coverage",
     "deploy": "./scripts/deploy.sh",
     "upgrade": "./scripts/upgrade.sh",
     "console": "./node_modules/.bin/truffle console --network console",
-    "prepublish": "npm run build-abis"
+    "prepack": "npm run build",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && npm publish --access=public"
   },
-  "pre-commit": "build-abis",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alice-network/gateway-dex-chain"
+    "url": "https://github.com/alice-network/gateway-dex-chain.git"
   },
   "author": "Changhwan Choi <changhwan@dnext.co>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alice-network/gateway-dex-chain"
+    "url": "https://github.com/alice-network/gateway-dex-chain/issues"
   },
   "homepage": "https://github.com/alice-network/gateway-dex-chain",
   "dependencies": {
@@ -42,7 +45,6 @@
     "loom-js": "^1.38.0",
     "loom-truffle-provider": "^0.11.0",
     "openzeppelin-test-helpers": "^0.1.2",
-    "pre-commit": "^1.2.2",
     "readline-sync": "1.4.9",
     "solc": "^0.5.0",
     "solidity-coverage": "^0.5.11",
