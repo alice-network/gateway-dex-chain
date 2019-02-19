@@ -1,0 +1,25 @@
+module.exports = {
+  // port: 6545,
+  // testrpcOptions: '-p 6545 -u 0x54fd80d6ae7584d8e9a19fe1df43f04e5282cc43',
+  // testCommand: 'mocha --timeout 5000',
+  // norpc: true,
+  // dir: './secretDirectory',
+  // copyPackages: ['zeppelin-solidity'],
+  skipFiles: [
+    // "ownership/OracleManageable.sol",
+    // "mapper/AccountMapper.sol",
+    // "mapper/TokenMapper.sol",
+    // "handler/DepositHandler.sol",
+    // "handler/WithdrawHandler.sol",
+    // "Gateway.sol",
+    // "token/ERC20GatewayMintable.sol",
+    // "token/ERC721GatewayMintable.sol",
+    "token/IERC20GatewayMintable.sol",
+    "token/IERC721GatewayMintable.sol",
+    "token/ERC721BasicToken.sol",
+    "token/EthereumCoin.sol",
+    // "mock/OracleManageableMock.sol",
+    "mock/ERC20Mock.sol",
+    "mock/ERC721Mock.sol",
+  ]
+};

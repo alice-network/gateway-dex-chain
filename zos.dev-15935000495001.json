@@ -1,0 +1,354 @@
+{
+  "contracts": {
+    "Gateway": {
+      "address": "0x8362468AEBE110bA056034542dC2B2Dc4897FEC0",
+      "constructorCode": "608060405234801561001057600080fd5b506133d9806100206000396000f3fe",
+      "bodyBytecodeHash": "bb5d2a4d70e33dbfaf267ba6101beb00e1e3563e4240b01f20a16caf1b97edb2",
+      "localBytecodeHash": "d1ae2f1bbf011ef44018efcca7265dd42884cd98c3501978332c53cd46210cb7",
+      "deployedBytecodeHash": "d1ae2f1bbf011ef44018efcca7265dd42884cd98c3501978332c53cd46210cb7",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_mapping<t_address>": {
+          "id": "t_mapping<t_address>",
+          "valueType": "t_address",
+          "label": "mapping(key => address)",
+          "kind": "mapping"
+        },
+        "t_bytes4": {
+          "id": "t_bytes4",
+          "kind": "elementary",
+          "label": "bytes4"
+        },
+        "t_mapping<t_bytes4>": {
+          "id": "t_mapping<t_bytes4>",
+          "valueType": "t_bytes4",
+          "label": "mapping(key => bytes4)",
+          "kind": "mapping"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_array:dyn<t_address>>": {
+          "id": "t_mapping<t_array:dyn<t_address>>",
+          "valueType": "t_array:dyn<t_address>",
+          "label": "mapping(key => address[])",
+          "kind": "mapping"
+        },
+        "t_enum<WithdrawHandler.WithdrawalStatus>": {
+          "id": "t_enum<WithdrawHandler.WithdrawalStatus>",
+          "kind": "enum",
+          "label": "WithdrawHandler.WithdrawalStatus",
+          "members": [
+            "prepared",
+            "submitted",
+            "signed"
+          ]
+        },
+        "t_mapping<t_enum<WithdrawHandler.WithdrawalStatus>>": {
+          "id": "t_mapping<t_enum<WithdrawHandler.WithdrawalStatus>>",
+          "valueType": "t_enum<WithdrawHandler.WithdrawalStatus>",
+          "label": "mapping(key => WithdrawHandler.WithdrawalStatus)",
+          "kind": "mapping"
+        },
+        "t_struct<WithdrawHandler.Withdrawal>": {
+          "id": "t_struct<WithdrawHandler.Withdrawal>",
+          "kind": "struct",
+          "label": "WithdrawHandler.Withdrawal",
+          "members": [
+            {
+              "label": "nonce",
+              "astId": 432,
+              "type": "t_uint256",
+              "src": "1619:10:3"
+            },
+            {
+              "label": "foreignToken",
+              "astId": 434,
+              "type": "t_address",
+              "src": "1639:20:3"
+            },
+            {
+              "label": "foreignAccount",
+              "astId": 436,
+              "type": "t_address",
+              "src": "1669:22:3"
+            },
+            {
+              "label": "value",
+              "astId": 438,
+              "type": "t_uint256",
+              "src": "1701:10:3"
+            },
+            {
+              "label": "tokenType",
+              "astId": 440,
+              "type": "t_enum<WithdrawHandler.TokenType>",
+              "src": "1721:19:3"
+            },
+            {
+              "label": "signature",
+              "astId": 442,
+              "type": "t_bytes",
+              "src": "1750:15:3"
+            }
+          ]
+        },
+        "t_enum<WithdrawHandler.TokenType>": {
+          "id": "t_enum<WithdrawHandler.TokenType>",
+          "kind": "enum",
+          "label": "WithdrawHandler.TokenType",
+          "members": [
+            "unknown",
+            "eth",
+            "erc20",
+            "erc721"
+          ]
+        },
+        "t_bytes": {
+          "id": "t_bytes",
+          "kind": "elementary",
+          "label": "bytes"
+        },
+        "t_mapping<t_struct<WithdrawHandler.Withdrawal>>": {
+          "id": "t_mapping<t_struct<WithdrawHandler.Withdrawal>>",
+          "valueType": "t_struct<WithdrawHandler.Withdrawal>",
+          "label": "mapping(key => WithdrawHandler.Withdrawal)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 4056,
+          "type": "t_bool",
+          "src": "757:24:34"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 4058,
+          "type": "t_bool",
+          "src": "876:25:34"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 4107,
+          "type": "t_array:50<t_uint256>",
+          "src": "1891:29:34"
+        },
+        {
+          "contract": "Ownable",
+          "path": "openzeppelin-eth/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 2011,
+          "type": "t_address",
+          "src": "302:22:16"
+        },
+        {
+          "contract": "Ownable",
+          "path": "openzeppelin-eth/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 2122,
+          "type": "t_array:50<t_uint256>",
+          "src": "2186:29:16"
+        },
+        {
+          "contract": "OracleManageable",
+          "path": "contracts/ownership/OracleManageable.sol",
+          "label": "_oracle",
+          "astId": 1638,
+          "type": "t_address",
+          "src": "225:23:9"
+        },
+        {
+          "contract": "OracleManageable",
+          "path": "contracts/ownership/OracleManageable.sol",
+          "label": "_foreignOracle",
+          "astId": 1640,
+          "type": "t_address",
+          "src": "254:30:9"
+        },
+        {
+          "contract": "OracleManageable",
+          "path": "contracts/ownership/OracleManageable.sol",
+          "label": "______gap",
+          "astId": 1785,
+          "type": "t_array:50<t_uint256>",
+          "src": "2111:29:9"
+        },
+        {
+          "contract": "AccountMapper",
+          "path": "contracts/mapper/AccountMapper.sol",
+          "label": "accountForeignToLocal",
+          "astId": 866,
+          "type": "t_mapping<t_address>",
+          "src": "513:57:4"
+        },
+        {
+          "contract": "AccountMapper",
+          "path": "contracts/mapper/AccountMapper.sol",
+          "label": "accountLocalToForeign",
+          "astId": 870,
+          "type": "t_mapping<t_address>",
+          "src": "576:57:4"
+        },
+        {
+          "contract": "AccountMapper",
+          "path": "contracts/mapper/AccountMapper.sol",
+          "label": "______gap",
+          "astId": 1119,
+          "type": "t_array:50<t_uint256>",
+          "src": "5407:29:4"
+        },
+        {
+          "contract": "TokenMapper",
+          "path": "contracts/mapper/TokenMapper.sol",
+          "label": "tokenForeignToLocal",
+          "astId": 1160,
+          "type": "t_mapping<t_address>",
+          "src": "743:55:5"
+        },
+        {
+          "contract": "TokenMapper",
+          "path": "contracts/mapper/TokenMapper.sol",
+          "label": "tokenLocalToForeign",
+          "astId": 1164,
+          "type": "t_mapping<t_address>",
+          "src": "804:55:5"
+        },
+        {
+          "contract": "TokenMapper",
+          "path": "contracts/mapper/TokenMapper.sol",
+          "label": "tokenProxyIds",
+          "astId": 1168,
+          "type": "t_mapping<t_bytes4>",
+          "src": "865:48:5"
+        },
+        {
+          "contract": "TokenMapper",
+          "path": "contracts/mapper/TokenMapper.sol",
+          "label": "proxyIdToTokens",
+          "astId": 1173,
+          "type": "t_mapping<t_array:dyn<t_address>>",
+          "src": "919:52:5"
+        },
+        {
+          "contract": "TokenMapper",
+          "path": "contracts/mapper/TokenMapper.sol",
+          "label": "______gap",
+          "astId": 1587,
+          "type": "t_array:50<t_uint256>",
+          "src": "6323:29:5"
+        },
+        {
+          "contract": "DepositHandler",
+          "path": "contracts/handler/DepositHandler.sol",
+          "label": "ethTokenAddress",
+          "astId": 141,
+          "type": "t_address",
+          "src": "1033:30:2"
+        },
+        {
+          "contract": "DepositHandler",
+          "path": "contracts/handler/DepositHandler.sol",
+          "label": "______gap",
+          "astId": 370,
+          "type": "t_array:50<t_uint256>",
+          "src": "4560:29:2"
+        },
+        {
+          "contract": "WithdrawHandler",
+          "path": "contracts/handler/WithdrawHandler.sol",
+          "label": "nonce",
+          "astId": 445,
+          "type": "t_uint256",
+          "src": "1778:17:3"
+        },
+        {
+          "contract": "WithdrawHandler",
+          "path": "contracts/handler/WithdrawHandler.sol",
+          "label": "withdrawalStatus",
+          "astId": 449,
+          "type": "t_mapping<t_enum<WithdrawHandler.WithdrawalStatus>>",
+          "src": "1802:57:3"
+        },
+        {
+          "contract": "WithdrawHandler",
+          "path": "contracts/handler/WithdrawHandler.sol",
+          "label": "withdrawals",
+          "astId": 453,
+          "type": "t_mapping<t_struct<WithdrawHandler.Withdrawal>>",
+          "src": "1865:46:3"
+        },
+        {
+          "contract": "WithdrawHandler",
+          "path": "contracts/handler/WithdrawHandler.sol",
+          "label": "______gap",
+          "astId": 837,
+          "type": "t_array:50<t_uint256>",
+          "src": "6378:29:3"
+        },
+        {
+          "contract": "Gateway",
+          "path": "contracts/Gateway.sol",
+          "label": "______gap",
+          "astId": 32,
+          "type": "t_array:50<t_uint256>",
+          "src": "702:29:0"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "gateway-dex-chain/Gateway": [
+      {
+        "address": "0x882d5C9A7Bf48754e3Cd49C432482b191B21Ac89",
+        "version": "1.0.0",
+        "implementation": "0x8362468AEBE110bA056034542dC2B2Dc4897FEC0"
+      }
+    ]
+  },
+  "zosversion": "2.2",
+  "version": "1.0.0",
+  "proxyAdmin": {
+    "address": "0x69026aEF65D4763B9A94936D635f9872Ae5518ea"
+  }
+}

@@ -1,0 +1,25 @@
+# local env variables
+.env
+
+# truffle build directory
+build/
+
+# coverage report
+coverage/
+coverage.json
+coverageEnv
+
+# node dependency directory
+node_modules/
+
+# IDEA Project directory
+.idea/
+
+# VS Code
+*.vscode*
+*.code*
+
+# MacOS system file
+.DS_Store
+
+.zos.session

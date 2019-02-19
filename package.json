@@ -1,0 +1,55 @@
+{
+  "name": "@alice-network/gateway-dex-chain",
+  "version": "1.0.0",
+  "description": "Solidity contracts for the gateway on the DEX Chain.",
+  "files": [
+    "abis",
+    "contracts",
+    "test"
+  ],
+  "scripts": {
+    "compile": "./node_modules/.bin/truffle compile --all",
+    "build-abis": "./node_modules/.bin/truffle compile && node scripts/build-abis.js",
+    "test": "./node_modules/.bin/truffle test",
+    "test:coverage": "./node_modules/.bin/solidity-coverage",
+    "deploy": "./scripts/deploy.sh",
+    "upgrade": "./scripts/upgrade.sh",
+    "console": "./node_modules/.bin/truffle console --network console",
+    "prepublish": "npm run build-abis"
+  },
+  "pre-commit": "build-abis",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alice-network/gateway-dex-chain"
+  },
+  "author": "Changhwan Choi <changhwan@dnext.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alice-network/gateway-dex-chain"
+  },
+  "homepage": "https://github.com/alice-network/gateway-dex-chain",
+  "dependencies": {
+    "openzeppelin-eth": "2.1.2",
+    "openzeppelin-solidity": "2.1.2",
+    "zos-lib": "^2.1.0"
+  },
+  "devDependencies": {
+    "@alice-network/zos": "^2.2.1",
+    "chai": "^4.2.0",
+    "chai-bignumber": "^3.0.0",
+    "dotenv": "^6.2.0",
+    "eth-gas-reporter": "^0.1.12",
+    "loom-js": "^1.38.0",
+    "loom-truffle-provider": "^0.11.0",
+    "openzeppelin-test-helpers": "^0.1.2",
+    "pre-commit": "^1.2.2",
+    "readline-sync": "1.4.9",
+    "solc": "^0.5.0",
+    "solidity-coverage": "^0.5.11",
+    "truffle": "5.0.2",
+    "yargs": "12.0.5"
+  },
+  "engines": {
+    "node": ">= 8.15.0"
+  }
+}
